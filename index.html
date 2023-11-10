@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Bancário</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2>Sistema Bancário</h2>
+        
+        <!-- Carregando  Arquivo CSV -->
+        <input type="file" id="fileInput" class="mb-3" accept=".csv">
+        
+        <!-- Seleção de Dados -->
+        <label for="dataSelect">Selecionar Dados:</label>
+        <select id="dataSelect" class="form-control mb-3"></select>
+        
+        <!-- Tipo de Gráfico -->
+        <label for="chartType">Tipo de Gráfico:</label>
+        <select id="chartType" class="form-control mb-3">
+            <option value="bar">Barras</option>
+            <option value="line">Linhas</option>
+            <option value="pie">Pizza</option>
+        </select>
+        
+        <!-- Opções de Gráfico -->
+        <label for="chartOptions">Opções de Gráfico:</label>
+        <textarea id="chartOptions" class="form-control mb-3" placeholder="Ex: { responsive: true, maintainAspectRatio: false }"></textarea>
+        
+        <!-- Visualização de Dados -->
+        <h4>Visualização de Dados</h4>
+        <table id="dataPreview" class="table table-bordered"></table>
+        
+        <!-- Botões -->
+        <button class="btn btn-primary" onclick="loadCSV()">Carregar Dados</button>
+        <button class="btn btn-success" onclick="generateChart()">Gerar Gráfico</button>
+        <button class="btn btn-info" onclick="exportChart()">Exportar Gráfico</button>
+    </div>
+
+    <!-- Arquivo JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
